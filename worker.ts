@@ -18,7 +18,7 @@ const copyData = async (offset: number, limit: number): Promise<void> => {
 
         for await (const row of resultSet) {
             const keys = Object.keys(row);
-            const values = Object.values(row);
+            const values = Object.values(row).map(value => new String(value));
             const insertQueryStr = `INSERT INTO ${Bun.env.PG_TABLE} (${keys.join(', ')})
             VALUES (${values.map((_, i) => `$${i + 1}`).join(', ')})`;
             await pgConn.query(insertQueryStr, values);
