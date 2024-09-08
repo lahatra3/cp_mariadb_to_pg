@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json bun.lockb tsconfig.json ./
 COPY main.ts worker.ts config.ts ./
 
-RUN bun install \
+RUN bun install --production \
     && bun build \ 
     --compile --minify ./main.ts ./worker.ts ./config.ts \
     --target=bun-linux-x64 \
