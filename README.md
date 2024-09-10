@@ -30,6 +30,9 @@ Before running this application, don't forget to create `.env` file from templat
 
 ### To run with docker
 
+- **Documentation**
+    https://hub.docker.com/r/lahatra3/cp_mariadb_to_pg
+
 - **From docker hub**
 
     - **Pull image**
